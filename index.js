@@ -38,7 +38,7 @@ app.delete('/api/todos/:id', (req, res) => {
 
 mongoose.connect('mongodb://localhost:27017/dbconnect')
 .then(() =>{
-    app.listen(5000, ()=>{
+    app.listen(process.env.PORT || 5000, ()=>{
         console.log('listening on 5000')
     });
     console.log('connected to mongoDB')
