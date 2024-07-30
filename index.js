@@ -36,15 +36,10 @@ app.delete('/api/todos/:id', (req, res) => {
     res.status(204).send();
   });
 
-mongoose.connect('mongodb://localhost:27017/dbconnect')
-.then(() =>{
-    app.listen(process.env.PORT || 5000, ()=>{
-        console.log('listening on 5000')
-    });
-    console.log('connected to mongoDB')
-}).catch((error) =>{
-    console.log(error)
-})
+app.listen(process.env.PORT || 5000, ()=>{
+    console.log('listening on 5000')
+});
+   
 
 
 
